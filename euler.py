@@ -3,6 +3,13 @@ this script contains some common function used
 in solving project euler problems
 '''
 
+# return the product of a list
+def product(lst):
+    p = 1
+    for a in lst: p = p*a
+    
+    return p
+
 # gcd (greatest common divisor)
 # using euclid's algorithm
 # https://en.wikipedia.org/wiki/Greatest_common_divisor#Using_Euclid's_algorithm
