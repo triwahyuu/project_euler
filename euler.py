@@ -29,7 +29,7 @@ def is_prime(n):
 # prime generation up to 'n'
 # using Sieve of Eratosthenes
 # https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes
-def sieve_erat(n):
+def list_prime(n):
     st = [1]*n  # create array of one with 'n' size
     prime = []
     for i in range(2,int(n**0.5)+1):

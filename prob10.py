@@ -1,5 +1,5 @@
 # solve the problem using Sieve of Eratosthenes
 
-from euler import sieve_erat
+from euler import list_prime
 
-print(sum(sieve_erat(2000000)))
+print(sum(list_prime(2000000)))
