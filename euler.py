@@ -25,3 +25,17 @@ def is_prime(n):
         i = i+6
     
     return True
+
+# prime generation up to 'n'
+# using Sieve of Eratosthenes
+# https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes
+def sieve_erat(n):
+    st = [1]*n  # create array of one with 'n' size
+    prime = []
+    for i in range(2,int(n**0.5)+1):
+        if st[i] == True:
+            for j in range(i**2, n, i): st[j] = 0
+    
+    for x in range(2,n):
+        if st[x] == True: prime.append(x)
+    return prime
