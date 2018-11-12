@@ -1,5 +1,14 @@
 # trying to brute force
-from itertools import count
+
+def compute():
+    n = 1
+    tn = 0 # triangle number
+    while True:
+        tn += n
+        num_div = num_factors(tn)
+        if num_div > 500: break
+        else: n += 1
+    return tn
 
 # return number of factors of 'n'
 def num_factors(n):
@@ -13,12 +22,4 @@ def num_factors(n):
 
 # print(num_factors(400))
 if __name__ == "__main__":
-    n = 1
-    tn = 0
-    while True:
-        tn += n
-        num_div = num_factors(tn)
-        if num_div > 500: break
-        else: n += 1
-    
-    print(tn, n)
+    print(compute())
