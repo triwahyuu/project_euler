@@ -46,3 +46,10 @@ def list_prime(n):
     for x in range(2,n):
         if st[x] == True: prime.append(x)
     return prime
+
+
+def factorial(n):
+    if n == 2:
+        return 2
+    else: 
+        return n*factorial(n-1)
