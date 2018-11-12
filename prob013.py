@@ -1,5 +1,4 @@
 # using some string manipulation
-
 def compute():
     left_over = 0
     s = []
@@ -13,7 +12,13 @@ def compute():
     s.append(left_over)
     s.reverse()
     sum_str = ''.join(str(i) for i in s[:9])
-    print(sum_str)
+    return sum_str
+
+# or just use normal sum (apparently python can handle those huuge numbers)
+def compute_new():
+    num_int = [int(i) for i in nums]
+    s = str(sum(num_int))[:10]
+    return s
 
 nums = "\
     37107287533902102798797998220837590246510135740250 \
@@ -119,4 +124,5 @@ nums = "\
 
 nums = nums.split()
 if __name__ == "__main__":
-    compute()
+    print(compute())
+    print(compute_new())
