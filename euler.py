@@ -53,3 +53,20 @@ def factorial(n):
         return 2
     else: 
         return n*factorial(n-1)
+
+# generate proper divisors of n 
+# (numbers less than n which evenly divide n)
+# using trial divisor
+# mode='s' -> return sorted, mode='u' -> return unsorted
+def proper_divisor(n, mode='u'):
+    pd = [1]
+    sqrt_n = int(n**0.5)
+    for i in range(2, sqrt_n+1):
+        if n%i == 0:
+            pd.extend([i, n//i])
+    
+    if n%sqrt_n == 0: pd.remove(sqrt_n)
+    
+    if mode == 's': pd.sort()
+    elif mode == 'u': pass
+    return pd
