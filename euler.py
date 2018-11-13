@@ -49,8 +49,10 @@ def list_prime(n):
 
 
 def factorial(n):
-    if n == 2:
-        return 2
+    if n < 0:
+        raise ValueError('n must be positive')
+    elif n == 1 or n == 0:
+        return 1
     else: 
         return n*factorial(n-1)
 
