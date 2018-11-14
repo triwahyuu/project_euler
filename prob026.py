@@ -4,8 +4,11 @@
 
 ## still wrong, maybe here is the solution
 ## https://en.wikipedia.org/wiki/Repeating_decimal#Fractions_with_prime_denominators
-
+## or could just use the full repetend prime that is less than 1000
 from euler import list_prime
+
+def is_congruent(a,b,n):
+    return (a-b)%n == 0
 
 def compute():
     b = 10
