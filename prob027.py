@@ -1,32 +1,22 @@
+## BRUTE FORCE
+## it's not possible that the b < 0, because if b < 0
+## the value of n = 0 will be < 0 as well, which is not prime
 from euler import list_prime
 from itertools import count
 
-def compute():
-    prime = list_prime(5000)
-    m = 0
-    val = 0
-    for a in range(1,1000):
-        for b in range(1,1001):
-            n1 = gen_prime_len(a,b,prime)
-            n2 = gen_prime_len(-a,-b,prime)
-            n3 = gen_prime_len(a,-b,prime)
-            n4 = gen_prime_len(-a,b,prime)
-            
-            if m < n1 or m < n2:
-                val = a*b
-                m = max([n1,n2])
-            elif m < n3 or m < n4: 
-                val = -a*b
-                m = max([n3,n4])
-    return val
+prime = list_prime(5000)
 
-def gen_prime_len(a,b,p):
+def compute():
+    ans = max(((a,b) for a in range(-999,1000) for b in range(2,1001)), key=cons_prime)
+    return ans[0]*ans[1]
+
+def cons_prime(ab):
+    a,b = ab
     for n in count():
         x = n*n + a*n + b
-        if x not in p: 
+
+        if x not in prime or x < 0: 
             return n
-        if x > 5000:
-            raise Exception('list of prime not enough')
 
 if __name__ == "__main__":
     print(compute())
