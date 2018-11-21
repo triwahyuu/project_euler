@@ -1,12 +1,7 @@
-s = 100
+## make use of 'set' in python, 'set' is an unordered unique list
+
 def compute():
-    found = []
-    for i in range(2,s+1):
-        for j in range(2,s+1):
-            x = i**j
-            if x not in found: 
-                found.append(x)
-    
+    found = set(a**b for a in range(2,101) for b in range(2,101))
     return len(found)
 
 if __name__ == "__main__":
