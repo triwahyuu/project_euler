@@ -1,27 +1,23 @@
-## there a thing called 'cyclic numbers'
-## https://en.wikipedia.org/wiki/Cyclic_number#Form_of_cyclic_numbers
-## which we can directly calculate the number of recuring cycle
-
-## still wrong, maybe here is the solution
-## https://en.wikipedia.org/wiki/Repeating_decimal#Fractions_with_prime_denominators
-## or could just use the full repetend prime that is less than 1000
-from euler import list_prime
-
-def is_congruent(a,b,n):
-    return (a-b)%n == 0
+## keep dividing, and save the modulo in dict
+## if the modulo value is in dict, the rest of the division 
+## should be the same as the first division, so it's repeated
+def recuring_len(n):
+    seen = {0:0}
+    m,i = 1,1
+    while True:
+        if m in seen:
+            break
+        else:
+            seen[m] = i
+            m = m*10 % n
+            i += 1
+    
+    if m != 0: return i - seen[m]
+    else: return 0
 
 def compute():
-    b = 10
-    prime = list_prime(1000)
-    max_dig = 0
-    max_num = 0     # the number which has highest recuring digit
-    for p in prime:
-        rec_num = (b**(p-1)-1)//p   # the recuring cycle number
-        dig = len(str(rec_num))     # the number of recuring cycle
-        if dig > max_dig:
-            max_dig = dig
-            max_num = p
-    return max_num
+    n = max(range(1,1000), key=recuring_len)
+    return n
 
 if __name__ == "__main__":
     print(compute())
