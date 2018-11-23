@@ -1,7 +1,7 @@
-# pre-processing script
-txt = open("p022_names.txt", 'r')
+# textfile pre-processing script
+txt = open("prob042_words.txt", 'r')
 tmp = txt.read().rstrip()
-names = open("p022.txt", 'w')
+result = open("prob042.txt", 'w')
 
 i = 0
 while i < len(tmp)-1:
@@ -11,9 +11,9 @@ while i < len(tmp)-1:
         while tmp[i] != '"':
             n += tmp[i]
             i += 1
-        names.write(n + ',')
+        result.write(n + ',')
         i += 1
     else: i += 1
 
 txt.close()
-names.close()
+result.close()
