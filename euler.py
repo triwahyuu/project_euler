@@ -3,23 +3,23 @@ this script contains some common function used
 in solving project euler problems
 '''
 
-# return the product of a list
+## return the product of a list
 def product(lst):
     p = 1
     for a in lst: p *= a
     return p
 
-# gcd (greatest common divisor)
-# using euclid's algorithm
-# https://en.wikipedia.org/wiki/Greatest_common_divisor#Using_Euclid's_algorithm
+## gcd (greatest common divisor)
+## using euclid's algorithm
+## https://en.wikipedia.org/wiki/Greatest_common_divisor#Using_Euclid's_algorithm
 def gcd(a, b):
     if b > a: a,b = b,a # swap value
 
     if b == 0: return a
     else: return gcd(b, a%b)
 
-# primality test using trial division
-# https://en.wikipedia.org/wiki/Primality_test
+## primality test using trial division
+## https://en.wikipedia.org/wiki/Primality_test
 def is_prime(n):
     if n <= 1: return False
     elif n<= 3: return True
@@ -28,13 +28,13 @@ def is_prime(n):
     i = 5
     while i*i <= n:
         if n%i == 0 or n%(i+2) == 0: return False
-        i = i+6
+        i += 6
     
     return True
 
-# prime generation up to 'n'
-# using Sieve of Eratosthenes
-# https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes
+## prime generation up to 'n'
+## using Sieve of Eratosthenes
+## https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes
 def list_prime(n):
     st = [1]*n  # create array of one with 'n' size
     prime = []
@@ -55,10 +55,17 @@ def factorial(n):
     else: 
         return n*factorial(n-1)
 
-# generate proper divisors of n 
-# (numbers less than n which evenly divide n)
-# using trial divisor
-# mode='s' -> return sorted, mode='u' -> return unsorted
+## https://en.wikipedia.org/wiki/Binomial_coefficient#Recursive_formula
+def combination(n,k):
+    if k < 1 or n == k:
+        return 1
+    else:
+        return combination(n-1, k-1)+combination(n-1,k)
+
+## generate proper divisors of n 
+## (numbers less than n which evenly divide n)
+## using trial divisor
+## mode='s' -> return sorted, mode='u' -> return unsorted
 def proper_divisor(n, mode='u'):
     pd = [1]
     sqrt_n = int(n**0.5)
