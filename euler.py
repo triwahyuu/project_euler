@@ -6,8 +6,7 @@ in solving project euler problems
 # return the product of a list
 def product(lst):
     p = 1
-    for a in lst: p = p*a
-    
+    for a in lst: p *= a
     return p
 
 # gcd (greatest common divisor)
