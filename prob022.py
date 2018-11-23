@@ -1,6 +1,6 @@
 
 def compute():
-    txt = open("p022.txt", 'r')
+    txt = open("prob022_names.txt", 'r')
     names = txt.read().split(',')
     names.pop()     # delete unnecesary last value
     names.sort()    # sort alphabetically
