@@ -1,6 +1,6 @@
 ## using hardcoded memoization
 from euler import is_prime
-import itertools, time
+import itertools
 
 list_factor = {2:[2], 3:[3]}
 seen_factor = {2,3} # used for searching
@@ -10,13 +10,11 @@ C = 4   # numbers of consecutive num
 D = 4   # numbers of distinct factors
 
 def compute():
-    t = time.time()
     con = 0
     for i in itertools.count(4):
         if len(factors(i)) == D:
             con += 1
             if con == C:    # found
-                print(time.time() - t)
                 return i-C+1
         else:
             con = 0
