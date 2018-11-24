@@ -36,16 +36,18 @@ def is_prime(n):
 ## using Sieve of Eratosthenes
 ## https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes
 def list_prime(n):
-    st = [1]*n  # create array of one with 'n' size
-    prime = []
-    for i in range(2,int(n**0.5)+1):
-        if st[i] == True:
-            for j in range(i**2, n, i): st[j] = 0
-    
-    for x in range(2,n):
-        if st[x] == True: prime.append(x)
+    st = list_primality(n)
+    prime = [x for x in range(2, len(st)-1) if st[x]==True]
     return prime
 
+## prime generation, returns the state list only
+def list_primality(n):
+    st = [True]*(n+1)  # state array
+    for i in range(2, int(n**0.5)+1):
+        if st[i] == True:
+            for j in range(i**2, n+1, i): 
+                st[j] = False
+    return st
 
 def factorial(n):
     if n < 0:
