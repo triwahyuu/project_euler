@@ -1,7 +1,5 @@
-s = 0 # sum
+def compute():
+    return sum(i for i in range(1000) if i%3 == 0 or i%5 == 0)
 
-for n in range(1000):
-    if ((n%3) == 0) or ((n%5) == 0) :
-        s = s + n
-
-print(s)
+if __name__ == "__main__":
+    print(compute())

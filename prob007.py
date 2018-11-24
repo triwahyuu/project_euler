@@ -1,10 +1,14 @@
-# finding 10001st prime
-import euler
+from euler import is_prime
+import itertools
 
-idx = 0
-num = 1
-while idx<10001:
-    num = num+1
-    if euler.is_prime(num): idx = idx+1
+def compute():
+    idx = 1     # doesn't need to check for 2
+    for n in itertools.count(3, 2): # just check the even number
+        if is_prime(n):
+            idx += 1
+            if idx == 10001:
+                break
+    return n
 
-print(num)
+if __name__ == "__main__":
+    print(compute())

@@ -1,8 +1,13 @@
-# trying to brute force
+## trying to brute force
+def compute():
+    TOT = 1000
+    for a in range(3, TOT):
+        for b in range(a+1, TOT):
+            c = TOT - b - a
+            if c < 0:
+                break
+            if a*a + b*b == c*c:
+                return a*b*c
 
-tot = 1000
-for a in range(1,tot+1):
-    for b in range(a,tot+1):
-        c = tot - a - b
-        if c < 0: break
-        if a*a+b*b == c*c: print(a, b, c, a*b*c)
+if __name__ == "__main__":
+    print(compute())

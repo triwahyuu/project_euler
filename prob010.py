@@ -1,5 +1,8 @@
-# solve the problem using Sieve of Eratosthenes
-
+## solve the problem using Sieve of Eratosthenes
 from euler import list_prime
 
-print(sum(list_prime(2000000)))
+def compute():
+    return sum(list_prime(2000000))
+
+if __name__ == "__main__":
+    print(compute())

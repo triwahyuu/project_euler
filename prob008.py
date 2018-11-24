@@ -1,4 +1,6 @@
-n = 13
+from euler import product
+
+N = 13
 seq = "\
 73167176531330624919225119674426574742355349194934\
 96983520312774506326239578318016984801869478851843\
@@ -21,14 +23,13 @@ seq = "\
 05886116467109405077541002256983155200055935729725\
 71636269561882670428252483600823257530420752963450"
 
-largest = 0
-idx = 0
-for i in range(1000-n):
-    p = 1
-    for j in range(n): 
-        p = p*int(seq[i+j])
-    if largest < p: 
-        largest = p
-        idx = i
-
-print(largest, idx)
+def compute():
+    largest = 0
+    for i in range(1000-N):
+        p = product([int(i) for i in seq[i:i+N]])
+        if p > largest:
+            largest = p
+    return largest
+    
+if __name__ == "__main__":
+    print(compute())
