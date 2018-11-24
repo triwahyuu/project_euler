@@ -1,5 +1,5 @@
-# trying to use dynamic programming
-# https://hackernoon.com/dynamic-programming-python-80f944aa6e6c
+## trying to use dynamic programming
+## https://hackernoon.com/dynamic-programming-python-80f944aa6e6c
 def compute():
     tr = triangle
     for y in range(len(tr)-1, 0, -1):

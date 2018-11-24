@@ -1,5 +1,5 @@
-# colatz sequence
-# optimize with recursion and memoization
+## colatz sequence
+## optimized with recursion and memoization
 from functools import lru_cache
 
 def compute():

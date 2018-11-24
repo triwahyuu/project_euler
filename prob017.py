@@ -3,10 +3,7 @@
 # https://english.stackexchange.com/questions/111765/how-to-write-out-numbers-in-compliance-with-british-usage
 
 def compute():
-    s = 0
-    for i in range(1,1000+1):
-        s += len(to_english(i))
-    return s
+    return sum(len(to_english(n)) for n in range(1, 1001))
 
 ONES = ['', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten']
 TWENTIES = ['', 'eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen', 'seventeen', 'eighteen', 'nineteen']
@@ -27,7 +24,6 @@ def to_english(n):
         sen = to_english(n//1000) + 'thousand'
         if n%1000 < 100 and n%1000 > 0: sen += 'and'
         sen += to_english(n%1000)
-    
     return sen
 
 if __name__ == "__main__":

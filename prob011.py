@@ -24,13 +24,22 @@ grid = [
     [ 1, 70, 54, 71, 83, 51, 54, 69, 16, 92, 33, 48, 61, 43, 52,  1, 89, 19, 67, 48]
 ]
 
-# return product of the grid in 1-axis
+def compute():
+    mp = 0  # maximum product
+    for x in range(20):
+        for y in range(20):
+            res = max_product_cell(x,y)
+            if mp < res: mp = res
+    return mp
+
+## returns the product of the grid in 1-axis
 def grid_product(x, y, dx, dy):
     res = 1
-    for i in range(4): res = res*grid[y + i*dy][x + i*dx]
+    for i in range(4): 
+        res = res*grid[y + i*dy][x + i*dx]
     return res
 
-# return the largest product in all direction of a cell
+## returns the largest product in all direction of a cell
 def max_product_cell(x,y):
     max_prod = 0
     if (x <= 20-n): 
@@ -47,10 +56,4 @@ def max_product_cell(x,y):
     return max_prod
 
 if __name__ == "__main__":
-    mp = 0
-    for x in range(20):
-        for y in range(20):
-            res = max_product_cell(x,y)
-            if mp < res: mp = res
-    
-    print(mp)
+    print(compute())

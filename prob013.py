@@ -1,26 +1,5 @@
-# using some string manipulation
-def compute():
-    left_over = 0
-    s = []
-    for i in range(len(nums[1])-1, -1, -1):
-        tot = left_over
-        for j in range(len(nums)): tot += int(nums[j][i])
-        
-        s.append(tot%10)
-        left_over = tot//10
-    
-    s.append(left_over)
-    s.reverse()
-    sum_str = ''.join(str(i) for i in s[:9])
-    return sum_str
-
-# or just use normal sum (apparently python can handle those huuge numbers)
-def compute_new():
-    num_int = [int(i) for i in nums]
-    s = str(sum(num_int))[:10]
-    return s
-
-nums = "\
+## just use normal sum (apparently python can handle those huuge numbers)
+whole_num = "\
     37107287533902102798797998220837590246510135740250 \
     46376937677490009712648124896970078050417018260538 \
     74324986199524741059474233309513058123726617309629 \
@@ -122,7 +101,11 @@ nums = "\
     20849603980134001723930671666823555245252804609722 \
     53503534226472524250874054075591789781264330331690"
 
-nums = nums.split()
+def compute():
+    nums = whole_num.split()
+    num_int = [int(i) for i in nums]
+    s = str(sum(num_int))[:10]
+    return s
+
 if __name__ == "__main__":
     print(compute())
-    print(compute_new())
