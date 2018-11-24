@@ -1,5 +1,5 @@
 from euler import is_prime
-import itertools, time
+import itertools
 
 list_factor = [[0],[1],[2],[3],[2],[5]]
 primes = [2,3,5,7,9,11]
@@ -7,7 +7,6 @@ C = 4   # numbers of consecutive num
 D = 4   # numbers of distinct factors
 
 def compute():
-    t = time.time()
     for i in itertools.count(6):
         con = 0
         while True:
@@ -17,7 +16,6 @@ def compute():
                 break
             
             if con == C:    # found
-                print(time.time() - t)
                 return i
 
 ## take use of memoization, some recursive
