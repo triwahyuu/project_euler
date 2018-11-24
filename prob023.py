@@ -4,17 +4,15 @@ def compute():
     sum_div = proper_divisor(limit)
     
     # list abundant number
-    abundant_num = []
-    for i in range(1, limit):
-        if i < sum_div[i]: 
-            abundant_num.append(i)
+    abundant_num = [i for i in range(1, limit) if i < sum_div[i]]
     
     writable = [False]*(limit)
     for i in abundant_num:
         for j in abundant_num:
             if i+j < limit: 
                 writable[i+j] = True
-            else: break
+            else: 
+                break
     
     # get the index of value that is true
     # enumerate returns tuple (idx, val)

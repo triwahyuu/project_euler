@@ -13,19 +13,18 @@ def nth_permutation(n, nums):
     l = len(nums)
     n -= 1  # zero doesn't count, so the 1-st num is actually 0-th num here
     res = []
-    a = factorial(l-1)    # factorial of length of number left 'l'  minus 1 -> (l-1)!
+    a = factorial(l-1)
 
     for i in range(l-1, -1, -1):
         idx = n//a          # idx = n//(l-1)!
-        n = n%a             # n = n%(l-1)!
+        n %= a              # n = n%(l-1)!
         val = nums[idx]
 
         res.append(val)
         nums.remove(val)
-        if i != 0: a = a//i            # next factorial
-    
-    res = ''.join([str(i) for i in res])
-    return int(res)
+        if i != 0:          # next factorial
+            a = a//i
+    return int(''.join([str(i) for i in res]))
 
 if __name__ == "__main__":
     print(compute())
