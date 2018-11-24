@@ -20,35 +20,32 @@ def compute():
                 print(time.time() - t)
                 return i
 
-## take use of memoization
+## take use of memoization, some recursive
 def factors(n):
     known_factor = len(list_factor)
     
-    if known_factor > n:
+    if known_factor > n:    # the factors has been found
         return list_factor[n]
-    elif is_prime(n):
+    elif known_factor < n:  # the factors before it hasn't been found
+        f = []
+        while known_factor <= n:
+            f = factors(known_factor)    # calculate the next factors
+            known_factor = len(list_factor)
+        return f
+    elif is_prime(n):       
         list_factor.append([n])
         primes.append(n)
         return [n]
     else:
         f = set()
         for d in primes:
-            if known_factor > n:
+            if n%d == 0:
+                n //= d
+                f.add(d)
                 f.update(factors(n))
-                n = 1
                 break
-            else:
-                while n%d == 0:
-                    n //= d
-                    f.add(d)
-                if n == 1:
-                    break
-        if n != 1 and is_prime(n):
-            primes.append(n)
-            f.add(n)
         list_factor.append(list(f))
         return list(f)
 
 if __name__ == "__main__":
-    # print(factors(645))
     print(compute())
