@@ -1,7 +1,6 @@
-'''
-this script contains some common function used
-in solving project euler problems
-'''
+## this script contains some common function used
+## in solving project euler problems
+from functools import lru_cache
 
 ## return the product of a list
 def product(lst):
@@ -12,11 +11,14 @@ def product(lst):
 ## gcd (greatest common divisor)
 ## using euclid's algorithm
 ## https://en.wikipedia.org/wiki/Greatest_common_divisor#Using_Euclid's_algorithm
+@lru_cache(maxsize=200000)
 def gcd(a, b):
-    if b > a: a,b = b,a # swap value
-
-    if b == 0: return a
-    else: return gcd(b, a%b)
+    if b > a: 
+        a,b = b,a # swap value
+    if b == 0: 
+        return a
+    else: 
+        return gcd(b, a%b)
 
 ## primality test using trial division
 ## https://en.wikipedia.org/wiki/Primality_test
@@ -49,6 +51,7 @@ def list_primality(n):
                 st[j] = False
     return st
 
+@lru_cache(maxsize=200000)
 def factorial(n):
     if n < 0:
         raise ValueError('n must be positive')
@@ -58,6 +61,7 @@ def factorial(n):
         return n*factorial(n-1)
 
 ## https://en.wikipedia.org/wiki/Binomial_coefficient#Recursive_formula
+@lru_cache(maxsize=200000)
 def combination(n,k):
     if k < 1 or n == k:
         return 1
