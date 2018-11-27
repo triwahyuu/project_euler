@@ -11,15 +11,15 @@ def sqrt2_expand(n):
     m, d = 0, 1         # initial value
     a = a0 = int(n**0.5)
     seen_param = {(a,d,m)}  # storing known parameter (a,d,m)
-    param_value = [[a]]  # store the value of seen param
+    last_value = []      # store the last 'a' value of seen param
     while True:
         m = d*a - m
         d = (n - m*m) // d
         a = (a0 + m) // d
         if (a,d,m) in seen_param:
-            return a0, param_value[-1][1:]
+            return a0, last_value # doesn't need to return a0
         else:
-            param_value.append(param_value[-1] + [a])
+            last_value = last_value + [a]
             seen_param.add((a,d,m))
 
 def num_period(n):
