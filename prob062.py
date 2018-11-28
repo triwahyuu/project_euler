@@ -1,20 +1,23 @@
-## takes waaaay tooo long and unsolved
-from itertools import permutations
+## SOLVED
+## calculate cubes of a number, store it. If it already has permutation
+## on the list, join them together. The stored value is in sorted form
+## let's use set to get faster search time
 
-cube = {i**3 for i in range(1000)}
+import itertools
 
 def compute():
-    for i in range(345, 1000):
-        c = i**3
-        perm = permutations(str(c), len(str(c)))
-        found = set()
-        for p in perm:
-            n = int(''.join(p))
-            if len(str(n)) == len(str(c)) and n in cube:
-                found.add(n)
-        print(i, found, len(found))
-        if len(found) == 4:
-            return sorted(found)[0]
+    seen_sorted = set()     # store sorted cube
+    perm_dict = {}          # store seen value
+    for i in itertools.count(100):
+        cube = i**3
+        sorted_cube = ''.join(sorted(str(cube)))
+        if sorted_cube not in seen_sorted:
+            seen_sorted.add(sorted_cube)
+            perm_dict[sorted_cube] = [i]
+        else:
+            perm_dict[sorted_cube] += [i]
+            if len(perm_dict[sorted_cube]) == 5:
+                return (sorted(perm_dict[sorted_cube])[0])**3
 
 if __name__ == "__main__":
     print(compute())
