@@ -1,4 +1,3 @@
-## SOLVED
 ## calculate cubes of a number, store it. If it already has permutation
 ## on the list, join them together. The stored value is in sorted form
 ## let's use set to get faster search time
