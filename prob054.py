@@ -8,11 +8,7 @@ val_order = {k:v for v,k in enumerate(value)}
 
 def compute():
     poker_hand = load_data()
-    ans = 0
-    for x in poker_hand:
-        if p1_wins(x):
-            ans += 1
-    # ans = sum(1 for x in poker_hand if p1_wins(x))
+    ans = sum(1 for x in poker_hand if p1_wins(x))
     return ans
 
 ## is player1 wins?
