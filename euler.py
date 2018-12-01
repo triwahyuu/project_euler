@@ -44,7 +44,7 @@ def list_prime(n):
 
 ## prime generation, returns the state list only
 def list_primality(n):
-    st = [True]*(n+1)  # state array
+    st = [False, False] + [True]*(n-1)  # state array
     for i in range(2, int(n**0.5)+1):
         if st[i] == True:
             for j in range(i**2, n+1, i): 
