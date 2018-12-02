@@ -1,7 +1,6 @@
 ## SOLVED, takes 2.8s, any idea how to optimize?
 ## just calculate the chain, make use of memoization
 from euler import factorial
-import time
 
 fact = [factorial(n) for n in range(10)]
 known_len = {1, 2}
