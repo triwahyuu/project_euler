@@ -2,7 +2,6 @@
 ## it could also use permutation, a bit faster but it needs external library
 ## just calculate the chain, make use of memoization
 from euler import factorial
-from itertools import permutations
 
 fact = [factorial(n) for n in range(10)]
 known_len = {1, 2}
@@ -14,9 +13,7 @@ def compute():
     return ans
 
 def chain_length(n):
-    if n in known_len:
-        return chain_len[n]
-    chain = {n}
+    chain, chain_list = {n}, [n]
     val = n
     while True:
         val = sum(fact[int(x)] for x in str(val))
@@ -26,13 +23,14 @@ def chain_length(n):
             break
         elif val not in chain:
             chain.add(val)
+            chain_list.append(val)
         else:
             l = len(chain)
             break
-    perm = [int(''.join(a)) for a in permutations(str(n)) if a[0] != '0']
-    for p in perm:
-        known_len.add(p)
-        chain_len[p] = l
+    for x in chain_list:
+        known_len.add(x)
+        chain_len[x] = l
+        l -= 1
     return chain_len[n]
 
 if __name__ == "__main__":
