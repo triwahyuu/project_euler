@@ -7,10 +7,8 @@ known_len = {1, 2}
 chain_len = {1:1, 2:1}
 
 def compute():
-    t = time.time()
     limit = 10**6
     ans = sum(1 for n in range(3, limit) if chain_length(n) == 60)
-    print(time.time() - t)
     return ans
 
 def chain_length(n):
