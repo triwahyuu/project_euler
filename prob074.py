@@ -1,4 +1,5 @@
-## SOLVED, takes 2.8s, any idea how to optimize?
+## SOLVED, takes ~2.8s, any idea how to optimize?
+## it could also use permutation tho, but turns out it's even slower
 ## just calculate the chain, make use of memoization
 from euler import factorial
 
