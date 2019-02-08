@@ -2,7 +2,7 @@
 #include <cmath>
 #include "euler.h"
 
-int main(int argc, char const *argv[])
+int compute()
 {
     const uint64_t num = 600851475143;
 
@@ -17,7 +17,11 @@ int main(int argc, char const *argv[])
         }
         d++;
     }
-    
-    std::cout << factors.back() << std::endl;
+    return factors.back();
+}
+
+int main(int argc, char const *argv[])
+{
+    std::cout << compute() << std::endl;
     return 0;
 }

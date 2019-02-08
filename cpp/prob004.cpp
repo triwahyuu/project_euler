@@ -2,7 +2,7 @@
 #include <vector>
 #include "euler.h"
 
-int main(int argc, char const *argv[])
+int compute()
 {
     uint32_t num = 0;
     
@@ -12,7 +12,11 @@ int main(int argc, char const *argv[])
             if(is_palindrome(x) && num < x) num = x;
         }
     }
-    
-    std::cout << num << std::endl;
+    return num;
+}
+
+int main(int argc, char const *argv[])
+{   
+    std::cout << compute() << std::endl;
     return 0;
 }

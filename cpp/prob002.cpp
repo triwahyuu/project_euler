@@ -1,6 +1,6 @@
 #include <iostream>
 
-int main(int argc, char const *argv[])
+int compute()
 {
     int fib[2] = {1,2};
     int sum = 2, n;
@@ -12,7 +12,11 @@ int main(int argc, char const *argv[])
         if(n%2 == 0)
             sum += n;
     }
+    return sum;
+}
 
-    std::cout << sum << std::endl;
+int main(int argc, char const *argv[])
+{
+    std::cout << compute() << std::endl;
     return 0;
 }
