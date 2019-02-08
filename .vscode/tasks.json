@@ -7,6 +7,14 @@
             "label": "run python",
             "type": "shell",
             "command": "python3 ${file}"
+        },
+        {
+            "label": "run c++",
+            "type": "shell",
+            "command": "cd ${fileDirname} && make build/${fileBasenameNoExtension} && ./build/${fileBasenameNoExtension}",
+            "problemMatcher": [
+                "$gcc"
+            ]
         }
     ]
 }
