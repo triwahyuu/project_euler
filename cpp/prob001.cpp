@@ -1,6 +1,7 @@
 #include <iostream>
 
-int main(){
+int main(int argc, char const *argv[])
+{
     int sum = 0;
     for(int i = 0; i < 1000; i++)
     {

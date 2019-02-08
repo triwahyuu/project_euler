@@ -2,13 +2,13 @@
 # $^ means all dependencies of current rule
 # $< means first dependencies of current rule
 CXX = g++ 
-CXXFlags = -Wall -std=c++11
+CXXFlags = -std=c++11
 SRC = $(wildcard *.cpp)
 BUILD_DIR = build
 
 all : $(patsubst %.cpp,$(BUILD_DIR)/%,$(SRC))
 
-$(BUILD_DIR)/% : %.cpp
+$(BUILD_DIR)/% : %.cpp euler.h
 	@$(CXX) $(CXXFlags) $< -o $@ 
 
 $(BUILD_DIR)/euler.o : euler.cpp

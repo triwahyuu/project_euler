@@ -1,6 +1,7 @@
 #include <iostream>
 
-int main(){
+int main(int argc, char const *argv[])
+{
     int fib[2] = {1,2};
     int sum = 2, n;
 
