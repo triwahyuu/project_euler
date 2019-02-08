@@ -9,8 +9,11 @@ BUILD_DIR = build
 all : $(patsubst %.cpp,$(BUILD_DIR)/%,$(SRC))
 
 $(BUILD_DIR)/% : %.cpp
-	@$(CXX) $(CXXFlags) -o $@ $<
-	
+	@$(CXX) $(CXXFlags) $< -o $@ 
+
+$(BUILD_DIR)/euler.o : euler.cpp
+	$(CXX) $(CXXFlags) $< -c -o $@
+
 .PHONY : clean
 clean :
 	rm -f build/*
