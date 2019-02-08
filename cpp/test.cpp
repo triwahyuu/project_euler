@@ -18,7 +18,11 @@ int main(int argc, char const *argv[])
         // std::cout << i << std::endl;
     }
     
-    std::cout << is_palindrome(1221) << " " << is_palindrome(100) << std::endl;
+    int a = 5, b = 3;
+    std::swap(a,b);
+    std::cout << a << " " << b << std::endl;
+
+    std::cout << std::abs(-5) << std::endl;
 
     return 0;
 }

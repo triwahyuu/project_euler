@@ -66,3 +66,10 @@ std::vector<uint32_t> list_prime(uint32_t n)
     }
     return prime;
 }
+
+uint32_t gcd(uint32_t a, uint32_t b)
+{
+    if(a < b) std::swap(a,b);
+    if(b == 0) return a;
+    else return gcd(b, a%b);
+}
