@@ -4,6 +4,7 @@
 #include <cmath>
 #include <string>
 #include <algorithm>
+#include <map>
 
 std::string reversed(std::string str)
 {
@@ -69,7 +70,14 @@ std::vector<uint32_t> list_prime(uint32_t n)
 
 uint32_t gcd(uint32_t a, uint32_t b)
 {
+    static std::map<std::pair<int,int>, int> cache;
     if(a < b) std::swap(a,b);
-    if(b == 0) return a;
-    else return gcd(b, a%b);
+
+    if(cache[std::make_pair(a,b)] != 0) return cache[std::make_pair(a,b)];
+    else if(b == 0) return a;
+    else{
+        uint32_t x = gcd(b, a%b);
+        cache[std::make_pair(a,b)] = x;
+        return x;
+    }
 }
