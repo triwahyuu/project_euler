@@ -15,6 +15,14 @@
             "problemMatcher": [
                 "$gcc"
             ]
+        },
+        {
+            "label": "build",
+            "type": "shell",
+            "command": "g++ -g --std=c++11 ${file} -o ${fileDirname}/build/${fileBasenameNoExtension}",
+            "problemMatcher": [
+                "$gcc"
+            ]
         }
     ]
 }
