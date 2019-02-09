@@ -7,6 +7,6 @@ int compute()
 
 int main(int argc, char const *argv[])
 {
-    std::cout << compute() << std::endl;
+    std::cout << "Hello World!!" << std::endl;
     return 0;
 }
