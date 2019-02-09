@@ -2,23 +2,8 @@
 // of commonly used function
 #include <vector>
 #include <cmath>
-#include <string>
-#include <algorithm>
 #include <map>
-
-std::string reversed(std::string str)
-{
-    std::string s = str;
-    std::reverse(s.begin(), s.end());
-    return s;
-}
-
-uint32_t reversed(uint32_t num)
-{
-    std::string s = std::to_string(num);
-    int n = std::stoi(reversed(s));
-    return n;
-}
+#include "utils.h"
 
 bool is_prime(int n)
 {

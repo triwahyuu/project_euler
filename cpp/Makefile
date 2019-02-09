@@ -8,7 +8,7 @@ BUILD_DIR = build
 
 all : $(patsubst %.cpp,$(BUILD_DIR)/%,$(SRC))
 
-$(BUILD_DIR)/% : %.cpp euler.h
+$(BUILD_DIR)/% : %.cpp euler.h utils.h
 	@$(CXX) $(CXXFlags) $< -o $@ 
 
 $(BUILD_DIR)/euler.o : euler.cpp
