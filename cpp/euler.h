@@ -27,8 +27,8 @@ bool is_prime(int n)
     else if(n%2 == 0 || n%3 == 0) return false;
 
     int i = 5;
-    while(i^2 < n){
-        if(n%i == 0) return false;
+    while(i*i <= n){
+        if(n%i == 0 || n%(i+2) == 0) return false;
         i += 6;
     }
     return true;
