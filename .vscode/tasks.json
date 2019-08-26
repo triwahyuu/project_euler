@@ -14,7 +14,11 @@
             "command": "cd ${fileDirname} && make build/${fileBasenameNoExtension} && ./build/${fileBasenameNoExtension}",
             "problemMatcher": [
                 "$gcc"
-            ]
+            ],
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            }
         },
         {
             "label": "build",
@@ -22,7 +26,11 @@
             "command": "g++ -g --std=c++11 ${file} -o ${fileDirname}/build/${fileBasenameNoExtension}",
             "problemMatcher": [
                 "$gcc"
-            ]
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
         }
     ]
 }

@@ -1,15 +1,13 @@
 #include <iostream>
-#include "euler.h"
 
 int compute()
 {
-    int n = 1, idx = 1;
-    while(idx < 10001){
-        n += 2;
-        if(is_prime(n))
-            idx++;
+    const int S = 25;
+    while(true){
+        
     }
-    return n;
+    
+    return 0;
 }
 
 int main(int argc, char const *argv[])

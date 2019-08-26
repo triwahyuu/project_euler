@@ -22,9 +22,9 @@ int main(int argc, char const *argv[])
     std::swap(a,b);
     // std::cout << a << " " << b << std::endl;
 
-    std::vector<int> d = {3,5,2,4};
+    std::vector<std::vector<int>> d = {{3,5},{2,4}};
     int r = 0;
-    std::cout << r << " " << d.size() << std::endl;
+    std::cout << d[0][1] << " " << d[1][1] << std::endl;
 
     return 0;
 }
