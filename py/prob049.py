@@ -1,7 +1,7 @@
 ## looks like the only possible difference betwen two sequences is
 ## multiply of 10 (last digit of them is the same), and it should be
 ## more than 1000 (first digit is not the same)
-from euler import is_prime
+from .euler import is_prime
 import itertools
 
 def compute():

@@ -1,6 +1,6 @@
 # lattice path can be easily solved with combinatorial
 # http://mathworld.wolfram.com/LatticePath.html
-from euler import factorial
+from .euler import factorial
 
 def compute():
     return lattice_path(20,20)

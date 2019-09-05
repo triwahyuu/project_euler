@@ -1,5 +1,5 @@
 ## BRUTE FORCE
-from euler import list_prime, is_prime
+from .euler import list_prime, is_prime
 
 primes = list_prime(1000000)
 seen = []

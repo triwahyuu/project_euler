@@ -1,5 +1,5 @@
 ## simplified solution, using built-in memoization tools
-from euler import is_prime
+from .euler import is_prime
 from functools import lru_cache # memoization tools
 import itertools
 

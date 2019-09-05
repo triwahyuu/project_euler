@@ -1,4 +1,4 @@
-from euler import product
+from .euler import product
 
 N = 13
 seq = "\

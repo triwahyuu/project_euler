@@ -1,4 +1,4 @@
-from euler import product
+from .euler import product
 
 ## maximum value needed: value >100K has 6 digits, so 100K-200K has 6*100K
 ## that is 600K digits. for 10K-99K, 5*89k that is 445K. So it is enough to

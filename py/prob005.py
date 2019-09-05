@@ -2,7 +2,7 @@
 ## multiplier (LCM), which also have associative properties
 ## https://en.wikipedia.org/wiki/Least_common_multiple
 
-from euler import gcd
+from .euler import gcd
 
 ## using associative properties of LCM to solve the problem
 ## lcm(k1,k2,...,k_n) = lcm(k1,lcm(k2,...,lcm(k_n-1,k_n)...)

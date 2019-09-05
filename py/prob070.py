@@ -4,7 +4,7 @@
 ## http://mathworld.wolfram.com/TotientFunction.html
 ## quotient -> n/phi
 
-from euler import list_primality
+from .euler import list_primality
 import itertools
 
 limit = 10**7

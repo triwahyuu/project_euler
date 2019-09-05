@@ -1,4 +1,4 @@
-from euler import list_prime
+from .euler import list_prime
 
 N = 1000000
 primes = list_prime(N)

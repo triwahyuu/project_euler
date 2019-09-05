@@ -2,7 +2,7 @@
 ## so the maximum value of the number is 6 digits and should have 
 ## around 3 digit of 9 (999000). the minimun value should have 2 digits
 ## or maybe it is not possible if it has digit 9 in it, so try just 5 digits
-from euler import factorial
+from .euler import factorial
 
 ## optimize with lookup table
 fact = [factorial(i) for i in range(10)]

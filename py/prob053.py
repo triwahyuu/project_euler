@@ -1,7 +1,7 @@
 ## combination(n, r): maximum value is when r = n//2;
 ## if 'n' is even, the value if 'r = (n/2)+1' and 'r = (n/2)+1' is the same; 
 ## if 'n' is odd, the value if 'r = (n//2)' and 'r = (n//2)+1' is the same
-from euler import combination
+from .euler import combination
 
 def compute():
     ans = sum(num_combination(i) for i in range(23, 101))

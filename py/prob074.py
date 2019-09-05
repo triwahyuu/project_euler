@@ -1,7 +1,7 @@
 ## SOLVED, takes ~2.8s, any idea how to optimize?
 ## it could also use permutation, a bit faster but it needs external library
 ## just calculate the chain, make use of memoization
-from euler import factorial
+from .euler import factorial
 
 fact = [factorial(n) for n in range(10)]
 known_len = {1, 2}

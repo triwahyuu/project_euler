@@ -1,7 +1,7 @@
 ## still unsolved, 
 ## trying to solve with recursive, but what parameter to break it?
 ## use nayuki's method, the with sum of them
-from euler import list_primality, is_prime
+from .euler import list_primality, is_prime
 import itertools
 
 isprime = list_primality(20000)

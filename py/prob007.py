@@ -1,4 +1,4 @@
-from euler import is_prime
+from .euler import is_prime
 import itertools
 
 def compute():

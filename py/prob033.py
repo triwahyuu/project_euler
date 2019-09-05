@@ -8,7 +8,7 @@
 ## so n1=d1, which violate the rules, so d1=n1 or d0=n0 are not possible,
 ## then the problem can be simplified to just evaluating if n1=d0 or n0=d1
 ## but doesn't need to check when 'd0' or 'n0' is '0'
-from euler import gcd
+from .euler import gcd
 
 def compute():
     num_prod = 1

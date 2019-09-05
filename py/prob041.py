@@ -1,5 +1,5 @@
 ## create pandigital using permutation, then check if it's prime
-from euler import is_prime
+from .euler import is_prime
 from itertools import permutations
 
 def compute():

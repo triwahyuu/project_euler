@@ -4,7 +4,7 @@
 ## is just the sum of phi(2) + phi(3) + ... + phi(n)
 ## if 'n' is prime, phi(n) = n-1; 
 ## use another properties: phi(n^k) = (n^(k-1))*phi(n)
-from euler import list_primality
+from .euler import list_primality
 import itertools
 
 limit = 10**6

@@ -1,7 +1,7 @@
 ## BRUTE FORCE
 ## it's not possible that the b < 0, because if b < 0
 ## the value of n = 0 will be <0 as well, which is not prime
-from euler import list_prime
+from .euler import list_prime
 import itertools
 
 prime = set(list_prime(5000)) # set is faster for search

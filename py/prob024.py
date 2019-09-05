@@ -1,6 +1,6 @@
 ## trying to generate it directly
 ## implementing dynamic programming
-from euler import factorial
+from .euler import factorial
 
 # the 1M-th permutation of [0,1,2,3,4,5,6,7,8,9]
 def compute():

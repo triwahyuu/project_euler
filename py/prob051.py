@@ -3,7 +3,7 @@
 ## loop through every prime number
 ## mask 1 to n digit number of them
 ## try replacing with 0 up to 9, and find who gets up to 8 times prime
-from euler import list_primality
+from .euler import list_primality
 
 ## the value we are looking for is assumed to be more than 56K 
 ## (as in the problem states)

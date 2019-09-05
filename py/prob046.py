@@ -1,5 +1,5 @@
 import itertools
-from euler import is_prime
+from .euler import is_prime
 
 def compute():
     val = 9

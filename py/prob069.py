@@ -1,7 +1,7 @@
 ## reusing code from prob047 for calculating prime factor
 ## https://en.wikipedia.org/wiki/Euler%27s_totient_function#Computing_Euler's_totient_function
 ## n/phi(n) can be reduced to just the product part
-from euler import list_primality, product
+from .euler import list_primality, product
 
 isprime = list_primality(1000000)
 

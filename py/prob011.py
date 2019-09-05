@@ -1,4 +1,4 @@
-from euler import product
+from .euler import product
 
 n = 4 # number of consecutive product
 grid = [

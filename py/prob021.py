@@ -1,5 +1,5 @@
 # try brute force
-from euler import proper_divisor
+from .euler import proper_divisor
 
 spd_cache = {}
 def compute():

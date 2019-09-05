@@ -1,7 +1,7 @@
 ## the only possible number of the truncated prime in both ways is
 ## that it starts and ends with digits that is prime, so the maximum
 ## possible value less than 1M is below 780K
-from euler import is_prime, list_prime
+from .euler import is_prime, list_prime
 
 primes = list_prime(780000)     
 

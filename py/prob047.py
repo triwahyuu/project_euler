@@ -1,5 +1,5 @@
 ## using hardcoded memoization
-from euler import is_prime
+from .euler import is_prime
 import itertools
 
 list_factor = {2:[2], 3:[3]}
