@@ -1,6 +1,7 @@
 import os
 import argparse
 import importlib
+import time
 
 
 if __name__ == "__main__":
@@ -15,9 +16,12 @@ if __name__ == "__main__":
 
     probnum = 'prob' + ('0' * (3-len(str(args.prob)))) + str(args.prob)
 
-    if args.lang is "python":
+    if args.lang is "py":
         import py
         
         prob = importlib.import_module("py." + probnum)
-        print(prob.compute())
+        start = time.perf_counter()
+        res = prob.compute()
+        runtime = time.perf_counter() - start
+        print("{}\t\t in {:.8f} s".format(res, runtime))
         
