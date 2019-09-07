@@ -1,7 +1,0 @@
-[package]
-name = "project_euler_rust"
-version = "0.1.0"
-authors = ["triwahyuu <triwahyu34@gmail.com>"]
-edition = "2018"
-
-[dependencies]
