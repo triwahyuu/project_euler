@@ -1,5 +1,8 @@
-python/__pycache__/
+**/__pycache__/
 *.pyc
-cpp/build/
+
+**/build/
+**/*.o
+cpp/test.cpp
+
 rust/target/
-*.o

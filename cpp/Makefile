@@ -4,15 +4,14 @@
 CXX = g++ 
 CXXFlags = -std=c++11
 SRC = $(wildcard *.cpp)
+EXE = $(patsubst %.cpp, $(BUILD_DIR)/%, $(SRC))
 BUILD_DIR = build
 
-all : $(patsubst %.cpp,$(BUILD_DIR)/%,$(SRC))
+all : $(EXE)
 
 $(BUILD_DIR)/% : %.cpp euler.h utils.h
-	@$(CXX) $(CXXFlags) $< -o $@ 
-
-$(BUILD_DIR)/euler.o : euler.cpp
-	$(CXX) $(CXXFlags) $< -c -o $@
+	@mkdir -p $(BUILD_DIR)
+	$(CXX) $(CXXFlags) $< -o $@ 
 
 .PHONY : clean
 clean :
