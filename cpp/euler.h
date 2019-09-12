@@ -41,11 +41,10 @@ std::vector<bool> list_primality(uint32_t n)
 
 std::vector<uint32_t> list_prime(uint32_t n)
 {
-    std::vector<bool> st(n+1);
     std::vector<uint32_t> prime;
 
-    st = list_primality(n);
-    for(int i = 0; i < n+1; i++)
+    std::vector<bool> st = list_primality(n);
+    for(int i = 2; i < n+1; i++)
     {
         if(st[i] == true)
             prime.push_back(i);
