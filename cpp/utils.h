@@ -17,9 +17,14 @@ uint32_t reversed(uint32_t num)
     return std::stoi(reversed(std::to_string(num)));
 }
 
-uint64_t product(std::vector<int> data)
+uint64_t product(std::vector<uint64_t> data)
 {
-    return std::accumulate(std::begin(data), std::end(data), 1, std::multiplies<int>());
+    return std::accumulate(std::begin(data), std::end(data), 1, std::multiplies<uint64_t>());
+}
+
+uint64_t sum(std::vector<uint64_t> data)
+{
+    return std::accumulate(std::begin(data), std::end(data), (uint64_t)0);
 }
 
 #endif
