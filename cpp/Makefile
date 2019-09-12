@@ -2,7 +2,7 @@
 # $^ means all dependencies of current rule
 # $< means first dependencies of current rule
 CXX = g++ 
-CXXFlags = -std=c++11
+CXXFlags = -std=c++14
 SRC = $(wildcard *.cpp)
 EXE = $(patsubst %.cpp, $(BUILD_DIR)/%, $(SRC))
 BUILD_DIR = build
