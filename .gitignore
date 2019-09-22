@@ -3,6 +3,6 @@
 
 **/build/
 **/*.o
-cpp/test.cpp
+**/test.*
 
 rust/target/
