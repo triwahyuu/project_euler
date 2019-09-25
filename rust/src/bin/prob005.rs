@@ -5,26 +5,18 @@ fn compute() -> u32 {
     // https://en.wikipedia.org/wiki/Least_common_multiple
     // this is the answer: 2*3*2*5*7*2*3*11*13*2*17*19
 
-    let mut res = 1;
-    for i in 1..=15 {
-        res = lcm(res, i);
-        println!();
-    }
-    res
+    (2..=20).rev().fold(1, |acc, x| lcm(acc, x))
 }
 
 fn gcd(a: u32, b: u32) -> u32 {
-    if a <= 0 || b <= 0 {
-        0
-    }
-    else if a < b{
-        gcd(a, b - a)
-    }
-    else if a > b {
-        gcd(a - b, b)
+    let x = std::cmp::max(a, b);
+    let y = std::cmp::min(a, b);
+    
+    if y == 0 {
+        x
     }
     else {
-        a
+        gcd(y, x % y)
     }
 }
 
