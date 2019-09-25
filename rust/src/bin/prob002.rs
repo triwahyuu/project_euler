@@ -1,9 +1,9 @@
 use std::time::Instant;
 
 fn fibonacci(n: u32) -> u32{
-    let sqrt5 = (5f64).sqrt();
-    let phi = (1f64 + sqrt5)/2f64;
-    let psi = (1f64 - sqrt5)/2f64;
+    let sqrt5 = (5.0f64).sqrt();
+    let phi = (1.0 + sqrt5)/2.0;
+    let psi = (1.0 - sqrt5)/2.0;
     ((phi.powf((n+2).into()) - psi.powf((n+2).into()))/sqrt5) as u32
 }
 
