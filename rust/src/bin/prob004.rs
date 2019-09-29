@@ -1,9 +1,4 @@
-use std::time::Instant;
-
-fn is_palindrome(n: i32) -> bool {
-    let n: String = n.to_string();
-    n == n.chars().rev().collect::<String>()
-}
+extern crate euler;
 
 fn compute() -> i32{
     let mut max_palin = 0;
@@ -12,7 +7,7 @@ fn compute() -> i32{
             let p = i*j;
             if p < max_palin { break }
             
-            if is_palindrome(p) {
+            if euler::is_palindrome(p) {
                 max_palin = p;
                 break;
             }
@@ -23,7 +18,7 @@ fn compute() -> i32{
 }
 
 fn main() {
-    let now = Instant::now();
+    let now = std::time::Instant::now();
     
     let result = compute();
     println!("{:?}\tin {}ms", result, now.elapsed().as_millis());

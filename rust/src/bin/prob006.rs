@@ -1,4 +1,3 @@
-use std::time::Instant;
 
 fn compute() -> i32{
     let num: i32 = 100;
@@ -6,7 +5,7 @@ fn compute() -> i32{
 }
 
 fn main() {
-    let now = Instant::now();
+    let now = std::time::Instant::now();
     
     let result = compute();
     println!("{:?}\tin {}us", result, now.elapsed().as_micros());

@@ -1,4 +1,3 @@
-use std::time::Instant;
 
 fn compute() -> u64{
     let mut num: u64 = 600851475143;
@@ -19,7 +18,7 @@ fn compute() -> u64{
 }
 
 fn main() {
-    let now = Instant::now();
+    let now = std::time::Instant::now();
     
     let result = compute();
     println!("{:?}\tin {}us", result, now.elapsed().as_micros());
