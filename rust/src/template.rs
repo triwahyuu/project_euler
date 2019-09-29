@@ -1,4 +1,4 @@
-fn compute() -> i32{
+fn compute() -> i32 {
     100
 }
 
