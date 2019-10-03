@@ -3,6 +3,6 @@
 
 **/build/
 **/*.o
-**/test.*
+**/test_playground.*
 
 target/
