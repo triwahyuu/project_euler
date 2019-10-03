@@ -3,11 +3,11 @@
 #include <string>
 #include "utils.h"
 
-std::vector<int> split(std::string str)
+std::vector<uint64_t> str2vector(std::string str)
 {
-    std::vector<int> res;
+    std::vector<uint64_t> res;
     for(auto&& i : str)
-        res.push_back((int)i - '0');
+        res.push_back((uint64_t)i - '0');
     
     return res;
 }
@@ -40,7 +40,7 @@ uint64_t compute()
     uint64_t max = 0;
     int idx = 0, i = 0;
     while(idx < 1000 - N){
-        uint64_t p = product(split(seq.substr(idx, N)));
+        uint64_t p = product(str2vector(seq.substr(idx, N)));
         if(max < p){
             max = p;
         }
