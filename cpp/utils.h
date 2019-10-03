@@ -5,6 +5,24 @@
 #include <string>
 #include <vector>
 #include <numeric>
+#include <fstream>
+#include <cassert>
+
+int get_answer(uint16_t prob_num, std::string *answer)
+{
+    *answer = "1234";
+
+    std::string line;
+    std::ifstream myfile ("example.txt");
+    if(myfile.is_open()) {
+        while (getline(myfile, line));
+        myfile.close();
+    }
+    else 
+        return -1;
+
+    return 0;
+}
 
 std::string reversed(std::string str)
 {
