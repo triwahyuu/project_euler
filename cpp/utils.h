@@ -10,18 +10,25 @@
 
 int get_answer(uint16_t prob_num, std::string *answer)
 {
-    *answer = "1234";
+    int cnt = 0;
+    std::vector<std::string> answers_list;
 
     std::string line;
-    std::ifstream myfile ("example.txt");
+    std::ifstream myfile("../answers.txt");
+    // or use `__FILE__` to get the sources path
+
     if(myfile.is_open()) {
-        while (getline(myfile, line));
+        while(getline(myfile, line)) {
+            answers_list.push_back(line);
+            cnt++;
+        }
         myfile.close();
     }
     else 
-        return -1;
-
-    return 0;
+        return 0;
+    
+    *answer = answers_list[prob_num].substr(4, std::string::npos);
+    return (*answer).length();
 }
 
 std::string reversed(std::string str)

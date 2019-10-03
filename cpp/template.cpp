@@ -7,11 +7,14 @@ int64_t compute()
     return 0;
 }
 
-int test_prob000() {
+int test_answer() {
     std::string answer;
-    get_answer(1, &answer);
+    if(!get_answer(1, &answer)) {
+        std::cout << "file not found" << std::endl;
+        return 1;
+    }
 
-    assert(answer.compare("1234") == 0);
+    assert(answer.compare("233168") == 0);
     return 0;
 }
 
@@ -23,5 +26,8 @@ int main(int argc, char const *argv[])
 
     auto duration = std::chrono::duration_cast<std::chrono::microseconds>(t2 - t1).count();
     std::cout << result << "\tin " << duration << " us\n";
-    return test_prob000();
+
+    // do testing
+    test_answer();
+    return 0;
 }
