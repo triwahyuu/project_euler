@@ -6,3 +6,5 @@
 **/test_playground.*
 
 target/
+
+.vscode/settings.json
