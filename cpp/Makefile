@@ -9,7 +9,7 @@ BUILD_DIR = build
 
 all : $(EXE)
 
-$(BUILD_DIR)/% : %.cpp euler.h utils.h
+$(BUILD_DIR)/% : %.cpp euler.h utils.h Makefile
 	@mkdir -p $(BUILD_DIR)
 	$(CXX) $(CXXFlags) $< -o $@ 
 
