@@ -1,3 +1,17 @@
+pub fn test_answer(prob_num: usize, answer: String) {
+    let mut fname = std::env::current_dir().unwrap();
+    fname.set_file_name("answers.txt");
+
+    let answers_list: Vec<String> = std::fs::read_to_string(fname).unwrap()
+        .split('\n')
+        .map(String::from)
+        .collect();
+
+    let correct = answers_list[prob_num].get(4..).unwrap().to_string();
+
+    assert_eq!(correct, answer);
+}
+
 pub fn fibonacci(n: u32) -> u64{
     let sqrt5 = (5.0f64).sqrt();
     let phi = (1.0 + sqrt5)/2.0;

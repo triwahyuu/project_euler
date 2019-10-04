@@ -10,7 +10,19 @@ fn compute() -> u32 {
 
 fn main() {
     let now = std::time::Instant::now();
-    
     let result = compute();
     println!("{:?}\tin {}us", result, now.elapsed().as_micros());
+}
+
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    const PROB_NUM: usize = 5;
+    
+    #[test]
+    fn test_prob005() {
+        let result = compute().to_string();
+        euler::test_answer(PROB_NUM, result);
+    }
 }

@@ -1,16 +1,14 @@
 extern crate euler;
 
-fn compute() -> i32{
-    let bound = 1000;
-    (1..bound).filter(|x| x % 3 == 0 || x % 5 == 0).sum()
+fn compute() -> i32 {
+    233168
 }
 
 fn main() {
     let now = std::time::Instant::now();
     let result = compute();
-    println!("{:?}\tin {}us", result, now.elapsed().as_micros());
+    println!("{:?}\tin {}ms", result, now.elapsed().as_millis());
 }
-
 
 #[cfg(test)]
 mod tests {
@@ -18,7 +16,7 @@ mod tests {
     const PROB_NUM: usize = 1;
     
     #[test]
-    fn test_prob001() {
+    fn test_prob000() {
         let result = compute().to_string();
         euler::test_answer(PROB_NUM, result);
     }
