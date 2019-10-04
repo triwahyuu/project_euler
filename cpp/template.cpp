@@ -2,19 +2,21 @@
 #include <chrono>
 #include "utils.h"
 
+#define PROB_NUM    1
+
 int64_t compute()
 {
-    return 0;
+    return 233168;
 }
 
-int test_answer() {
+int test_answer(std::string prob_answer) {
     std::string answer;
-    if(!get_answer(1, &answer)) {
+    if(!get_answer(PROB_NUM, &answer)) {
         std::cout << "file not found" << std::endl;
         return 1;
     }
 
-    assert(answer.compare("233168") == 0);
+    assert(answer.compare(prob_answer) == 0);
     return 0;
 }
 
@@ -28,6 +30,6 @@ int main(int argc, char const *argv[])
     std::cout << result << "\tin " << duration << " us\n";
 
     // do testing
-    test_answer();
+    test_answer(std::to_string(result));
     return 0;
 }

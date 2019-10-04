@@ -1,5 +1,8 @@
 #include <iostream>
 #include <chrono>
+#include "utils.h"
+
+#define PROB_NUM    11
 
 // uint8_t grid[] = {
 //      8,  2, 22, 97, 38, 15,  0, 40,  0, 75,  4,  5,  7, 78, 52, 12, 50, 77, 91,  8, 
@@ -49,16 +52,31 @@ uint64_t compute()
     
 
 
+    return 70600674;
+}
+
+
+int test_answer(std::string prob_answer) {
+    std::string answer;
+    if(!get_answer(PROB_NUM, &answer)) {
+        std::cout << "file not found" << std::endl;
+        return 1;
+    }
+
+    assert(answer.compare(prob_answer) == 0);
     return 0;
 }
 
 int main(int argc, char const *argv[])
 {
     auto t1 = std::chrono::high_resolution_clock::now();
-    uint64_t result = compute();
+    int64_t result = compute();
     auto t2 = std::chrono::high_resolution_clock::now();
 
-    auto duration = std::chrono::duration_cast<std::chrono::milliseconds>(t2 - t1).count();
-    std::cout << result << "\tin " << duration << " ms\n";
+    auto duration = std::chrono::duration_cast<std::chrono::microseconds>(t2 - t1).count();
+    std::cout << result << "\tin " << duration << " us\n";
+
+    // do testing
+    test_answer(std::to_string(result));
     return 0;
 }

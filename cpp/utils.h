@@ -1,5 +1,5 @@
-#ifndef UTILS_H
-#define UTILS_H
+#ifndef __EULER_UTILS_H
+#define __EULER_UTILS_H
 
 #include <algorithm>
 #include <string>
@@ -15,7 +15,7 @@ int get_answer(uint16_t prob_num, std::string *answer)
 
     std::string line;
     std::ifstream myfile("../answers.txt");
-    // or use `__FILE__` to get the sources path
+    // or use `__FILE__` to get the source's path
 
     if(myfile.is_open()) {
         while(getline(myfile, line)) {
@@ -52,4 +52,4 @@ uint64_t sum(std::vector<uint64_t> data)
     return std::accumulate(std::begin(data), std::end(data), (uint64_t)0);
 }
 
-#endif
+#endif  // __EULER_UTILS_H
