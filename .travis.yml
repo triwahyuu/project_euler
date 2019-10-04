@@ -1,0 +1,47 @@
+os: linux
+dist: xenial
+branches:
+  only:
+    - master
+    
+notifications:
+  email: false
+
+matrix:
+  fast_finish: true
+  include:
+    # - name: "python"
+    #   language: python
+    #   env:
+    #     - "CC=/usr/bin/gcc"
+    #     - "CXX=/usr/bin/g++"
+
+    - name: "cpp"
+      language: cpp
+      env:
+        - "CC=/usr/bin/gcc"
+        - "CXX=/usr/bin/g++"
+      addons:
+        apt:
+          sources:
+            - sourceline: 'deb https://apt.kitware.com/ubuntu/ xenial main'
+              key_url: 'https://apt.kitware.com/keys/kitware-archive-latest.asc'
+          packages:
+            - cmake
+      script:
+        - cmake --version
+        - mkdir build && cd build
+        - cmake ..
+        - ctest
+
+    # - name: "rust"
+    #   language: rust
+    #   env:
+    #     - "CC=/usr/bin/clang-8"
+    #     - "CXX=/usr/bin/clang-8"
+    #   addons:
+    #     apt:
+    #       sources:
+    #         - llvm-toolchain-xenial-8
+    #       packages:
+    #         - clang-8
