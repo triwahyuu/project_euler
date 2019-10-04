@@ -35,6 +35,5 @@ matrix:
       language: rust
       rust: 
         - stable
-        - beta
       script:
         - cargo test
