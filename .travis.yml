@@ -26,19 +26,12 @@ matrix:
           packages:
             - cmake
       script:
-        - mkdir build && cd build
-        - cmake ..
-        - cmake --build . -- -j2
+        - cmake . -B `pwd`/build
+        - cmake --build build/ -- -j2
         - ctest
 
-    # - name: "rust"
-    #   language: rust
-    #   env:
-    #     - "CC=/usr/bin/clang-8"
-    #     - "CXX=/usr/bin/clang-8"
-    #   addons:
-    #     apt:
-    #       sources:
-    #         - llvm-toolchain-xenial-8
-    #       packages:
-    #         - clang-8
+    - name: "rust"
+      language: rust
+      rust: 
+        - stable
+        - beta
