@@ -23,15 +23,12 @@ matrix:
         - "CXX=/usr/bin/g++"
       addons:
         apt:
-          sources:
-            - sourceline: 'deb https://apt.kitware.com/ubuntu/ xenial main'
-              key_url: 'https://apt.kitware.com/keys/kitware-archive-latest.asc'
           packages:
             - cmake
       script:
-        - cmake --version
         - mkdir build && cd build
         - cmake ..
+        - cmake --build . -- -j2
         - ctest
 
     # - name: "rust"
