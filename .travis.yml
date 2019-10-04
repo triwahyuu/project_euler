@@ -26,8 +26,9 @@ matrix:
           packages:
             - cmake
       script:
-        - cmake . -B `pwd`/build
-        - cmake --build build/ -- -j2
+        - mkdir build && cd build
+        - cmake ..
+        - cmake --build . -- -j2
         - ctest
 
     - name: "rust"
@@ -35,3 +36,5 @@ matrix:
       rust: 
         - stable
         - beta
+      script:
+        - cargo test
