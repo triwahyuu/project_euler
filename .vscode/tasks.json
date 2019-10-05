@@ -6,7 +6,8 @@
         {
             "label": "run python",
             "type": "shell",
-            "command": "python3 ${file}"
+            "command": "python3 ${file}",
+            "problemMatcher": []
         },
         {
             "label": "run c++",

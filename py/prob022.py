@@ -1,5 +1,7 @@
+import os
+
 def compute():
-    txt = open("prob022_names.txt", 'r')
+    txt = open(os.path.join(os.path.dirname(__file__), "prob022_names.txt"), 'r')
     names = txt.read().split(',')
     names.sort()    # sort alphabetically
     
