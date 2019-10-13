@@ -2,7 +2,7 @@ extern crate euler;
 
 fn compute() -> u32 {
     (1..).scan(0, |acc, x| {*acc += x; Some(*acc)})         // return new iterator
-        .skip_while(|&triangle| num_factors(triangle) <= 50)
+        .skip_while(|&triangle| num_factors(triangle) <= 500)
         .next()
         .unwrap()
 }
